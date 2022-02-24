@@ -1,0 +1,27 @@
+@use "sass:math";
+
+/**
+* Remove the unit of a length
+*
+* @param {Number} $number - Number to remove unit from
+* @return {Number} - Unitless number
+*/
+@function strip-unit($number) {
+	@if type-of($number) == "number" and not unitless($number) {
+		@return math.div($number, ($number * 0 + 1));
+	}
+
+	@return $number;
+}
+
+@function vh($number) {
+	@return calc(#{$number} * var(--vh, 1vh));
+}
+
+@function cw($number, $base: strip-unit($container-max-width - 2 * $container-gap)) {
+	@return percentage(math.div($number, $base));
+}
+
+@function em($number, $base: strip-unit($font-size)) {
+	@return math.div($number, $base) * 1em;
+}

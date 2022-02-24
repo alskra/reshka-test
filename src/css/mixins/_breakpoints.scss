@@ -1,0 +1,33 @@
+@mixin media-breakpoint-up($breakpoint) {
+	@if type-of($breakpoint) == "string" {
+		$breakpoint: map-get($breakpoints, $breakpoint);
+	}
+
+	@media (min-width: $breakpoint) {
+		@content;
+	}
+}
+
+@mixin media-breakpoint-down($breakpoint) {
+	@if type-of($breakpoint) == "string" {
+		$breakpoint: map-get($breakpoints, $breakpoint);
+	}
+
+	@media (max-width: $breakpoint - 0.02) {
+		@content;
+	}
+}
+
+@mixin media-breakpoint-between($breakpoint-start, $breakpoint-end) {
+	@if type-of($breakpoint-start) == "string" {
+		$breakpoint-start: map-get($breakpoints, $breakpoint-start);
+	}
+
+	@if type-of($breakpoint-end) == "string" {
+		$breakpoint-end: map-get($breakpoints, $breakpoint-end);
+	}
+
+	@media (min-width: $breakpoint-start) and (max-width: $breakpoint-end - 0.02) {
+		@content;
+	}
+}

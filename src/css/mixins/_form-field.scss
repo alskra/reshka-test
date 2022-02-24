@@ -1,0 +1,19 @@
+@mixin form-field {
+	all: unset;
+	display: inline-block;
+	vertical-align: top;
+	min-width: 0;
+	max-width: 100%;
+	box-sizing: border-box;
+	transition: border-color, box-shadow, color, background-color, opacity;
+	transition-duration: $transition-duration;
+	cursor: text;
+
+	@include disabled {
+		cursor: default;
+	}
+
+	&:is(textarea) {
+		resize: vertical;
+	}
+}

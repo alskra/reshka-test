@@ -1,0 +1,24 @@
+@mixin button {
+	all: unset;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: top;
+	min-width: 0;
+	max-width: 100%;
+	box-sizing: border-box;
+	white-space: nowrap;
+	transition: border-color, box-shadow, color, background-color, opacity;
+	transition-duration: $transition-duration;
+	cursor: pointer;
+	user-select: none;
+
+	@include focus-visible {
+		@include focus-visible-default;
+	}
+
+	@include disabled {
+		cursor: default;
+		pointer-events: none;
+	}
+}

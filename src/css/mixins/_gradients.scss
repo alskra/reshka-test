@@ -1,0 +1,9 @@
+@mixin conic-gradient() {
+	background: $color-primary;
+	// stylelint-disable-next-line
+	background: conic-gradient(from 135deg at 50% 50%, $color-cornflower-blue 0deg, $color-governor-bay-2 360deg);
+}
+
+@mixin gradient-section() {
+	background: linear-gradient(180deg, $color-aero-blue 51.03%, $color-onahau 100%);
+}

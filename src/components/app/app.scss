@@ -1,0 +1,19 @@
+.app {
+	display: flex;
+	flex-flow: column;
+	min-height: vh(100);
+}
+
+.app__header {
+	display: flex;
+	flex-flow: wrap;
+	place-content: center;
+	padding: var(--gap);
+	height: 120rem;
+	color: $color-white;
+	background: $color-black;
+}
+
+.app__main {
+	flex: 1;
+}

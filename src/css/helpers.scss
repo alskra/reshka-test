@@ -1,0 +1,29 @@
+.color-primary {
+	color: $color-primary;
+}
+
+.position-relative {
+	position: relative;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+@each $name, $value in $breakpoints {
+	@include media-breakpoint-up($name) {
+		.hidden-#{$name}-up {
+			// stylelint-disable-next-line
+			display: none !important;
+		}
+	}
+}
+
+@each $name, $value in map-reverse($breakpoints) {
+	@include media-breakpoint-down($name) {
+		.hidden-#{$name}-down {
+			// stylelint-disable-next-line
+			display: none !important;
+		}
+	}
+}

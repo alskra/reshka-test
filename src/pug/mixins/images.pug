@@ -1,0 +1,47 @@
+mixin img-2x
+	img(
+		src!=attributes.src
+		srcset!=`${attributes.src.replace(/\.\w+$/, '@2x$&')} 2x`
+		alt=""
+	)&attributes(attributes)
+
+mixin picture-webp
+	-
+		let {src, srcset, sizes, alt = ''} = attributes;
+
+		delete attributes.src;
+		delete attributes.srcset;
+		delete attributes.sizes;
+		delete attributes.alt;
+
+		let ext;
+		const srcWithoutExt = src.replace(/\.\w+$/, (match) => {
+			ext = match;
+
+			return '';
+		});
+
+		srcset = srcset.split(',').map((item) => item.trim());
+		srcset = srcset.map((item) => `${srcWithoutExt}@${item}${ext} ${item}`).join(', ')
+
+		let srcsetWebp = srcset.replace(new RegExp(`\\${ext}(?= )`, 'g'), '.webp');
+
+		if (!sizes) {
+			srcsetWebp = `${srcWithoutExt}.webp, ${srcsetWebp}`;
+		}
+
+	picture&attributes(attributes)
+		source(type="image/webp" srcset!=srcsetWebp sizes!=sizes)
+		img(src!=src srcset!=srcset sizes!=sizes alt!=alt)
+
+mixin img-sizes(src)
+	img(
+		src=src
+		srcset=`
+			${src} 320w,
+			${src} 640w,
+			${src} 768w,
+			${src} 1024w,
+			${src} 1280w
+		`
+	)&attributes(attributes)

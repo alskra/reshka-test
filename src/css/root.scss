@@ -1,0 +1,19 @@
+:root {
+	--body-width: calc(100vw - var(--scrollbar-width, 0));
+	--gap: 30rem;
+	--font-size: #{$font-size};
+	--line-height: #{$line-height};
+	--heading-line-height: #{$heading-line-height};
+
+	font-size: 1px;
+
+	@include media-breakpoint-down(xl) {
+		font-size: calc(0.3 / 1200 * 100vw + 0.7px);
+	}
+
+	@include media-breakpoint-down(lg) {
+		--gap: 20rem;
+
+		font-size: calc(0.2 / 360 * 100vw + 0.8px);
+	}
+}

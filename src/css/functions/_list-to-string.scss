@@ -1,0 +1,19 @@
+@function list-to-string($list, $separator: ",") {
+	@if length($list) == 1 {
+		@return $list;
+	}
+
+	// stylelint-disable-next-line
+	$string: "";
+
+	@each $item in $list {
+		@if $string != "" {
+			$string: $string + $separator + " ";
+		}
+
+		// stylelint-disable-next-line
+		$string: $string + $item;
+	}
+
+	@return $string;
+}

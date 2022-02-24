@@ -1,0 +1,106 @@
+*,
+::before,
+::after {
+	min-width: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	overflow-wrap: break-word;
+	font-family: $font-family;
+	-webkit-font-smoothing: antialiased;
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+	text-decoration-skip: objects;
+	text-rendering: optimizeLegibility;
+	text-size-adjust: 100%;
+	color: $color;
+	-webkit-tap-highlight-color: transparent;
+	background: $background-color;
+}
+
+// stylelint-disable
+h1, h2, h3, h4, h5, h6,
+p,
+ul, ol,
+dl, dt, dd,
+blockquote,
+figure {
+// stylelint-enable
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: currentColor;
+}
+
+img {
+	vertical-align: top;
+	max-width: 100%;
+	user-select: none;
+}
+
+img[draggable="false"] {
+	pointer-events: none;
+	// stylelint-disable-next-line
+	-webkit-user-drag: none;
+}
+
+picture {
+	display: inline-block;
+	vertical-align: top;
+	max-width: 100%;
+
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+fieldset {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+@include focus-not-focus-visible {
+	outline: 0;
+}
+
+@include focus-visible {
+	@include focus-visible-default;
+}
+
+[hidden],
+[x-cloak] {
+	// stylelint-disable-next-line
+	display: none !important;
+}
+
+::selection {
+	color: $color-white;
+	background: rgba($color-primary, 0.9);
+}
+
+/* stylelint-disable */
+/*
+* Немедленно переместите любую анимацию в конечную точку, если пользователь установил свое устройство в положение "prefers reduced motion".
+* Это может привести к плохим(непреднамеренным) последствиям. Удалите по мере необходимости и напишите свой собственный код для prefers-reduced-motion.
+*/
+@media (prefers-reduced-motion: reduce) {
+	*,
+	::before,
+	::after {
+		animation-duration: 0.001s !important;
+		animation-delay: 0s !important;
+		transition-duration: 0.001s !important;
+		transition-delay: 0s !important;
+	}
+}
+/* stylelint-enable */
