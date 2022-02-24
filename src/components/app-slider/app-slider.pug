@@ -1,0 +1,32 @@
+mixin app-slider()
+	app-slider.app-slider&attributes(attributes)
+		.app-slider__swiper.swiper
+			.swiper-wrapper
+				.app-slider__item.swiper-slide
+					.app-slider__body
+						.app-slider__image
+							+img-2x().app-slider__image-el(src="../../images/content/app-slider/slide-1.jpg")
+						.app-slider__main
+							.app-slider__main-inner
+								h2.app-slider__title Кето
+								.app-slider__description
+									p рационы, программы питания
+								a.app-slider__button-more(href=""): span Подробнее
+
+				.app-slider__item.swiper-slide
+					.app-slider__body
+						.app-slider__image
+							+img-2x().app-slider__image-el(src="../../images/content/app-slider/slide-2.jpg")
+						.app-slider__main
+							.app-slider__main-inner
+								h2.app-slider__title Slide 2
+								.app-slider__description
+									p Slide 2 Description
+								a.app-slider__button-more(href=""): span Подробнее
+
+			.app-slider__navigation
+				button.app-slider__button.app-slider__button--prev
+					icon-svg(name="arrow-right")
+				.app-slider__pagination
+				button.app-slider__button.app-slider__button--next
+					icon-svg(name="arrow-right")

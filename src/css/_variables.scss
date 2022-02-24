@@ -2,11 +2,12 @@
 $color-black: #000;
 $color-white: #fff;
 $color-wattle: #d1d94d;
+$color-turmeric: #bec644;
 
 // Fonts
 $font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji";
+$font-family-circe: "Circe", sans-serif, $font-family-emoji;
 $font-family-forum: "Forum", sans-serif, $font-family-emoji;
-$font-family-circle: "Circe", sans-serif, $font-family-emoji;
 
 // Layout
 $breakpoints: (
@@ -14,7 +15,7 @@ $breakpoints: (
 	sm: 576px,
 	md: 768px,
 	lg: 1025px,
-	xl: 1200px,
+	xl: 1440px,
 	xxl: 1920px, // default
 	xxxl: 2560px
 );
@@ -24,14 +25,16 @@ $container-max-width: 1790rem;
 // Base
 $color: $color-black;
 $color-primary: $color-wattle;
-$font-family: $font-family-forum;
+$color-primary-hover: $color-turmeric;
+$font-family: $font-family-circe;
 $font-size: 24rem;
+$font-size-xs: 16rem;
 $line-height: 1.6;
 $background-color: $color-white;
 $transition-duration: 0.2s;
 
 // Heading
 $heading-color: $color;
-$heading-font-family: $font-family-circle;
-$heading-font-weight: 700;
+$heading-font-family: $font-family-forum;
+$heading-font-weight: 400;
 $heading-line-height: 1.15;

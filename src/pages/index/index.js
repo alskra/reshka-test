@@ -1,3 +1,3 @@
 import '../../js/base';
 
-import '../../components/slider/slider';
+import '../../components/app-slider/app-slider';

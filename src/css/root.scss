@@ -7,13 +7,14 @@
 
 	font-size: 1px;
 
-	@include media-breakpoint-down(xl) {
-		font-size: calc(0.3 / 1200 * 100vw + 0.7px);
+	@include media-breakpoint-down(xxl) {
+		font-size: calc(0.3 / #{strip-unit(map-get($breakpoints, xxl))} * 100vw + 0.7px);
 	}
 
 	@include media-breakpoint-down(lg) {
 		--gap: 20rem;
+		--font-size: #{$font-size-xs};
 
-		font-size: calc(0.2 / 360 * 100vw + 0.8px);
+		font-size: calc(0.2 / #{strip-unit(map-get($breakpoints, xs))} * 100vw + 0.8px);
 	}
 }

@@ -10,8 +10,14 @@
 	place-content: center;
 	padding: var(--gap);
 	height: 120rem;
+	font-family: $heading-font-family;
+	font-weight: $heading-font-weight;
 	color: $color-white;
 	background: $color-black;
+
+	@include media-breakpoint-down(lg) {
+		height: 60rem;
+	}
 }
 
 .app__main {

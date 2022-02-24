@@ -85,7 +85,7 @@ fieldset {
 
 ::selection {
 	color: $color-white;
-	background: rgba($color-primary, 0.9);
+	background: $color-primary-hover;
 }
 
 /* stylelint-disable */

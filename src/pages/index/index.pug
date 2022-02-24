@@ -1,8 +1,9 @@
 extends ../../pug/base
 
-include ../../components/slider/slider
+include ../../components/app-slider/app-slider
 
 block app
-	header.app__header Reshka Test
+	header.app__header
+		h1 Reshka Test
 	main.app__main
-		+slider()
+		+app-slider()
