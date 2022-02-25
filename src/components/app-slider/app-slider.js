@@ -1,5 +1,5 @@
 import 'swiper/css/bundle';
-import Swiper, {EffectFade, Navigation, Pagination} from 'swiper';
+import Swiper, {EffectFade, Navigation, Pagination, Autoplay} from 'swiper';
 import './app-slider.scss';
 
 class AppSlider extends HTMLElement {
@@ -11,16 +11,22 @@ class AppSlider extends HTMLElement {
 
 	connectedCallback() {
 		this.swiper = new Swiper(this.swiperEl, {
-			modules: [EffectFade, Navigation, Pagination],
+			modules: [EffectFade, Navigation, Pagination, Autoplay],
 			slidesPerView: 'auto',
-			on: {
-				init: () => {
-					this.swiperIsInit = true;
-				},
-				destroy: () => {
-					this.swiperIsInit = false;
-				},
-			},
+			// on: {
+			// 	transitionStart() {
+			// 		console.log('transitionStart');
+			// 	},
+			// 	slideChangeTransitionStart() {
+			// 		console.log('slideChangeTransitionStart');
+			// 	},
+			// 	slideChangeTransitionEnd() {
+			// 		console.log('slideChangeTransitionEnd');
+			// 	},
+			// 	slideChange() {
+			// 		console.log('slideChange');
+			// 	},
+			// },
 			effect: 'fade',
 			fadeEffect: {
 				crossFade: false,
@@ -42,6 +48,8 @@ class AppSlider extends HTMLElement {
 					return String(number).padStart(2, '0');
 				},
 			},
+			autoplay: true,
+			loop: true,
 		});
 	}
 }

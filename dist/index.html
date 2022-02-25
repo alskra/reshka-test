@@ -8,9 +8,53 @@
 	<script defer src="js/runtime.js"></script><script defer src="js/vendors.js"></script><script defer src="js/main.js"></script><link href="css/vendors.css" rel="stylesheet"><link href="css/main.css" rel="stylesheet"></head>
 	<body>
 		<div class="app">
-			<header class="app__header">Reshka Test</header>
+			<header class="app__header">
+				<h1>Reshka Test</h1>
+			</header>
 			<main class="app__main">
-				<div class="slider"></div>
+				<app-slider class="app-slider">
+					<div class="app-slider__swiper swiper">
+						<div class="swiper-wrapper">
+							<div class="app-slider__item swiper-slide">
+								<div class="app-slider__body">
+									<div class="app-slider__image"><img class="app-slider__image-el" src="images/content/app-slider/slide-1.jpg" srcset="images/content/app-slider/slide-1@2x.jpg 2x" alt="">
+									</div>
+									<div class="app-slider__main">
+										<div class="app-slider__main-inner">
+											<h2 class="app-slider__title">Кето</h2>
+											<div class="app-slider__description">
+												<p>рационы, программы питания</p>
+											</div><a class="app-slider__button-more" href=""><span>Подробнее</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="app-slider__item swiper-slide">
+								<div class="app-slider__body">
+									<div class="app-slider__image"><img class="app-slider__image-el" src="images/content/app-slider/slide-2.jpg" srcset="images/content/app-slider/slide-2@2x.jpg 2x" alt="">
+									</div>
+									<div class="app-slider__main">
+										<div class="app-slider__main-inner">
+											<h2 class="app-slider__title">Slide 2</h2>
+											<div class="app-slider__description">
+												<p>Slide 2 Description</p>
+											</div><a class="app-slider__button-more" href=""><span>Подробнее</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="app-slider__navigation">
+							<button class="app-slider__button app-slider__button--prev">
+								<icon-svg name="arrow-right"></icon-svg>
+							</button>
+							<div class="app-slider__pagination"></div>
+							<button class="app-slider__button app-slider__button--next">
+								<icon-svg name="arrow-right"></icon-svg>
+							</button>
+						</div>
+					</div>
+				</app-slider>
 			</main>
 		</div>
 	</body>

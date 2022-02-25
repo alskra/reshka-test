@@ -5,6 +5,20 @@
 .app-slider__item {
 	height: auto;
 	background: $color-white;
+
+	&:not(.swiper-slide-active) {
+		.app-slider__title,
+		.app-slider__description,
+		.app-slider__button-more {
+			opacity: 0;
+			//transition-duration: 0s;
+		}
+
+		.app-slider__title,
+		.app-slider__description {
+			transform: translateY(100%);
+		}
+	}
 }
 
 .app-slider__body {
@@ -89,6 +103,8 @@
 	line-height: 1;
 	letter-spacing: 0.01em;
 	text-transform: uppercase;
+	transition: opacity, transform;
+	transition-duration: 0.8s;
 
 	&:not(:last-child) {
 		margin-bottom: 16rem;
@@ -109,6 +125,9 @@
 	font-size: 40rem;
 	letter-spacing: 0.01em;
 	text-transform: uppercase;
+	transition: opacity, transform;
+	transition-duration: 0.7s;
+	transition-delay: 0.1s;
 
 	@include media-breakpoint-up(xl) {
 		max-width: calc((100% - var(--gap)) / 2);
@@ -130,6 +149,9 @@
 	text-transform: uppercase;
 	color: $color-white;
 	background: linear-gradient(90deg, $color-wattle 0%, $color-turmeric 100%);
+	transition: opacity, transform;
+	transition-duration: 0.3s;
+	transition-delay: 0.5s;
 
 	> span {
 		overflow: hidden;
